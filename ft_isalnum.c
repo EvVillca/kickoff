@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evillca- <evillca-@student.42madrid.com>   #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-25 08:56:43 by evillca-          #+#    #+#             */
-/*   Updated: 2024-09-25 08:56:43 by evillca-         ###   ########.fr       */
+/*   Created: 2024-09-25 09:25:47 by evillca-          #+#    #+#             */
+/*   Updated: 2024-09-25 09:25:47 by evillca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_isalnum(int c)
 {
-	return (ft_toupper(c) || ft_isalpha(c));
+	return (ft_isalpha(c) || ft_isdigit(c));
 }

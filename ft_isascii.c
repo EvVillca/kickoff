@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evillca- <evillca-@student.42madrid.com>   #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-25 08:56:43 by evillca-          #+#    #+#             */
-/*   Updated: 2024-09-25 08:56:43 by evillca-         ###   ########.fr       */
+/*   Created: 2024-09-25 10:17:21 by evillca-          #+#    #+#             */
+/*   Updated: 2024-09-25 10:17:21 by evillca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isalpha(int c)
+int	ft_isascii(int c)
 {
-	return (ft_toupper(c) || ft_isalpha(c));
+	return (c >= '0' || c <= '127');
 }

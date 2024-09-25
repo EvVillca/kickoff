@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evillca- <evillca-@student.42madrid.com>   #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-25 08:56:43 by evillca-          #+#    #+#             */
-/*   Updated: 2024-09-25 08:56:43 by evillca-         ###   ########.fr       */
+/*   Created: 2024-09-25 11:06:10 by evillca-          #+#    #+#             */
+/*   Updated: 2024-09-25 11:06:10 by evillca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isalpha(int c)
+/*Comprueba que solo se imprimen caracteres imprimibles*/
+int	ft_isprint(int c)
 {
-	return (ft_toupper(c) || ft_isalpha(c));
+	return (c > 31 && c < 127);
 }
