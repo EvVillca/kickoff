@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evillca- <evillca-@student.42madrid.com>   #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-25 08:56:43 by evillca-          #+#    #+#             */
-/*   Updated: 2024/10/02 08:47:06 by evillca-         ###   ########.fr       */
+/*   Created: 2024-10-02 09:07:21 by evillca-          #+#    #+#             */
+/*   Updated: 2024-10-02 09:07:21 by evillca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+/*
+ * Mem dinámica.
+ *numElem * size => inicializado a 0
+ */
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	void	*mem;
+	int		tam;
+
+	tam = nmemb * size;
+	mem = malloc (tam);
+	if (mem == NULL)
+		return (NULL);
+	ft_bzero (mem, tam);
+	return (mem);
 }

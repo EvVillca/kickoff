@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 /*Comprueba que solo se imprimen caracteres imprimibles*/
 int	ft_isprint(int c)
 {
