@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evillca- <evillca-@student.42madrid.com>   #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-10-02 07:40:00 by evillca-          #+#    #+#             */
-/*   Updated: 2024/10/03 18:20:38 by evillca-         ###   ########.fr       */
+/*   Created: 2024-10-07 14:31:50 by evillca-          #+#    #+#             */
+/*   Updated: 2024-10-07 14:31:50 by evillca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*_
- * Colaca 0 hasta tamaño n.
- */
-void	ft_bzero(void *s, size_t n)
+
+/*Compara el byte de mem hasta encontrar la 1º ocurrencia en S. Ptr*/
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
 
-	i = 0;
-	while (i < n)
+	i = -1;
+	while (++i < n)
 	{
-		*(unsigned char *)s++ = 0;
-		i++;
+		if (*(unsigned char *)(s) == (unsigned char)c)
+			return ((void *)(s));
+		s++;
 	}
+	return (NULL);
 }

@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evillca- <evillca-@student.42madrid.com>   #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-10-02 07:40:00 by evillca-          #+#    #+#             */
-/*   Updated: 2024/10/03 18:20:38 by evillca-         ###   ########.fr       */
+/*   Created: 2024-10-08 16:13:04 by evillca-          #+#    #+#             */
+/*   Updated: 2024-10-08 16:13:04 by evillca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*_
- * Colaca 0 hasta tamaño n.
- */
-void	ft_bzero(void *s, size_t n)
-{
-	size_t	i;
 
-	i = 0;
-	while (i < n)
-	{
-		*(unsigned char *)s++ = 0;
-		i++;
-	}
+/*Crea un nodo con información cualquiera*/
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*n;
+
+	n = (t_list *) malloc(sizeof(t_list));
+	if (n == NULL)
+		return (NULL);
+	n->content = content;
+	n->next = NULL;
+	return (n);
 }

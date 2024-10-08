@@ -15,12 +15,14 @@
 /*Rellena de n caracteres c en s*/
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*aux;
 
 	i = 0;
-	while (i > n)
+	aux = (unsigned char *) s;
+	while (i < n)
 	{
-		*(unsigned char *)s++ = c;
+		aux[i] = (unsigned char)c;
 		i++;
 	}
 	return (s);

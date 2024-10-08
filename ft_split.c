@@ -39,12 +39,80 @@ static int	count_words(char const *s, char c)
 	return (words);
 }
 
-static void	aux_split(char const *s, char c, char **strings)
+/*Devuelve el num de letras de la PLB hasta el delimitador */
+static int	len_word(char const *s, char c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != c && s[i])
+		i++;
+	return (i);
+}
+
+/*Libera memoria, de todas hasta donde falló. Con i para no desplar ptr*/
+static void	free_split(char **s, int j)
+{
+	int	i;
+
+	i = 0;
+	while (i < j)
+		free(s[i++]);
+}
+
+/*Crea los arrays con sus tamaños de lo delimitado*/
+/*
+static int	aux_split(char const *s, char c, char **strings)
 {
 	int	i;
 	int	j;
 
 	i = 0;
+	while (*s)
+	{
+		strings[i] = (char *) malloc((len_word(s, c) + 1) * sizeof(char *));
+		if (strings[i] == NULL)
+		{
+			free_split(strings, j);
+			return (1);
+		}
+		j = 0;
+		while (*s != c && *s)
+			strings[i][j++] = *s++;
+		strings[i][j] = 0;
+		s++;
+		i++;
+	}
+	strings[i] = NULL;
+	return (0);
+}
+*/
+static void	aux_split(char const *s, char c, char **strings)
+{
+	int	i;
+	int	k;
+
+	i = 0;
+	while (*s)
+	{
+		while (*s == c && *s)
+			s++;
+		if (*s == '\0')
+			continue ;
+		strings[i] = malloc(sizeof(char) * len_word(s, c) + 1);
+		if (strings[i] == NULL)
+			free_split(strings, i);
+		k = 0;
+		while (*s != c && *s)
+		{
+			strings[i][k] = *s;
+			k++;
+			s++;
+		}
+		strings[i][k] = '\0';
+		i++;
+	}
+	strings[i] = NULL;
 }
 
 /*Devuelve un array de strings, separado por el delimitador*/

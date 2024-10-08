@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evillca- <evillca-@student.42madrid.com>   #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-10-02 07:40:00 by evillca-          #+#    #+#             */
-/*   Updated: 2024/10/03 18:20:38 by evillca-         ###   ########.fr       */
+/*   Created: 2024-10-08 16:14:49 by evillca-          #+#    #+#             */
+/*   Updated: 2024-10-08 16:14:49 by evillca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*_
- * Colaca 0 hasta tamaño n.
- */
-void	ft_bzero(void *s, size_t n)
-{
-	size_t	i;
 
-	i = 0;
-	while (i < n)
+/*
+ * el 1º nodo se enlaza con el nuevo
+ * convierte el nuevo en el primero nodo
+ * */
+void	ft_lstadd_front(t_list **lst, t_list *new)
+{
+	if (lst && new)
 	{
-		*(unsigned char *)s++ = 0;
-		i++;
+		new->next = *lst;
+		*lst = new;
 	}
 }

@@ -13,18 +13,15 @@
 #include "libft.h"
 
 /*
- * Mem dinámica.
- *numElem * size => inicializado a 0
+ * Inicializa a 0 el malloc hecho.
  */
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*mem;
-	int		tam;
 
-	tam = nmemb * size;
-	mem = malloc (tam);
+	mem = malloc (nmemb * size);
 	if (mem == NULL)
 		return (NULL);
-	ft_bzero (mem, tam);
+	ft_bzero (mem, nmemb * size);
 	return (mem);
 }
