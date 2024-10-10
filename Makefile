@@ -12,8 +12,6 @@
 
 NAME        = libft.a
 
-INCLUDES    = libft.h
-
 SRC         = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
 				ft_isprint.c ft_strlen.c ft_memset.c ft_memcpy.c ft_memmove.c \
 				ft_bzero.c\
@@ -48,7 +46,7 @@ RM          = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(AR) $(NAME) $(OBJ)
+	$(AR) $(NAME) $(OBJ)
 
 bonus: $(OBJ) $(BONUSOBJ)
 	@$(AR) $(NAME) $(OBJ) $(BONUSOBJ)
